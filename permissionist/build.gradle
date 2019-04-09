@@ -3,6 +3,32 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'maven'
 apply plugin: 'signing'
+apply plugin: 'com.jfrog.bintray'
+apply plugin: 'com.github.dcendents.android-maven'
+
+ext {
+    bintrayRepo = "Permissionist"
+    bintrayName = "ru.appvelox.permissionist"
+
+    publishedGroupId = 'ru.appvelox.permissionist'
+    libraryName = 'permissionist'
+    artifact = 'permissionist'
+
+    libraryDescription = 'Android permissions library'
+
+    siteUrl = 'https://github.com/AppVelox/permissionist'
+    gitUrl = 'https://github.com/AppVelox/permissionist.git'
+
+    libraryVersion = '0.0.1'
+
+    developerId = 'MishkaBolgov'
+    developerName = 'Mikhail Bolgov'
+    developerEmail = 'bologv@appvelox.ru'
+
+    licenseName = 'MIT'
+    licenseUrl = '../LICENSE.txt'
+    allLicenses = ["MIT"]
+}
 
 
 android {
@@ -39,4 +65,13 @@ dependencies {
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation 'org.mockito:mockito-core:2.25.1'
     testImplementation "io.mockk:mockk:1.9.3.kotlin12"
+}
+
+repositories {
+    mavenCentral()
+}
+
+if (project.rootProject.file('local.properties').exists()) {
+    apply from: '../install.gradle'
+    apply from: '../bintray.gradle'
 }
