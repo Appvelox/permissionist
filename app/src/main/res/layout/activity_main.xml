@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="16dp"/>
+
+    <android.support.constraint.Guideline
+        android:id="@+id/guidelineEnd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="16dp"/>
+
+    <TextView
+        android:id="@+id/textViewTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Permissionist"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"/>
+
+    <TextView
+        android:id="@+id/textViewSamples"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text=" | Samples"
+        android:textSize="18sp"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textViewTitle"/>
+        
+    <TextView
+        android:id="@+id/textViewRequestPermission"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:text="Simple permission"
+        android:gravity="start"
+        app:layout_constraintTop_toBottomOf="@+id/textViewTitle"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toStartOf="@id/buttonRequestPermission"/>
+
+    <Button
+        android:id="@+id/buttonRequestPermission"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request!"
+        android:background="@android:color/transparent"
+        android:textColor="@color/appColor1"
+        app:layout_constraintTop_toTopOf="@id/textViewRequestPermission"
+        app:layout_constraintBottom_toBottomOf="@id/textViewRequestPermission"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+    <View
+        android:id="@+id/viewDividerRequestPermission"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/appColor4"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@+id/textViewRequestPermission"/>
+
+    <TextView
+        android:id="@+id/textViewRequestPermissionWithSystemRationale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:text="Permission with system rationale"
+        app:layout_constraintTop_toBottomOf="@id/viewDividerRequestPermission"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toStartOf="@id/buttonRequestPermission"/>
+
+
+    <EditText
+        android:id="@+id/editTextSystemRationaleTitle"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="Title"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewRequestPermissionWithSystemRationale"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart" />
+
+    <EditText
+        android:id="@+id/editTextSystemRationaleMessage"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:hint="Message"
+        android:textSize="12sp"
+        app:layout_constraintTop_toBottomOf="@id/textViewRequestPermissionWithSystemRationale"
+        app:layout_constraintStart_toEndOf="@id/editTextSystemRationaleTitle"/>
+
+    <Button
+        android:id="@+id/buttonRequestPermissionWithSystemRationale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request!"
+        android:background="@android:color/transparent"
+        android:textColor="@color/appColor1"
+        app:layout_constraintTop_toTopOf="@id/textViewRequestPermissionWithSystemRationale"
+        app:layout_constraintBottom_toBottomOf="@id/editTextSystemRationaleTitle"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+    <View
+        android:id="@+id/viewDividerRequestPermissionWithSystemRationale"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:layout_marginTop="16dp"
+        android:background="@color/appColor4"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"
+        app:layout_constraintTop_toBottomOf="@+id/editTextSystemRationaleMessage"/>
+
+    <TextView
+        android:id="@+id/textViewRequestPermissionWithCustomRationale"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="start"
+        android:text="Permission with custom rationale"
+        app:layout_constraintTop_toBottomOf="@id/viewDividerRequestPermissionWithSystemRationale"
+        app:layout_constraintStart_toStartOf="@id/guidelineStart"
+        app:layout_constraintEnd_toStartOf="@id/buttonRequestPermission"/>
+
+
+    <Button
+        android:id="@+id/buttonRequestPermissionWithCustomRationale"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Request!"
+        android:background="@android:color/transparent"
+        android:textColor="@color/appColor1"
+        app:layout_constraintTop_toTopOf="@id/textViewRequestPermissionWithCustomRationale"
+        app:layout_constraintBottom_toBottomOf="@id/textViewRequestPermissionWithCustomRationale"
+        app:layout_constraintEnd_toEndOf="@id/guidelineEnd"/>
+
+
+
+</android.support.constraint.ConstraintLayout>
