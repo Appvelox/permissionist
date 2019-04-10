@@ -70,8 +70,9 @@ dependencies {
 repositories {
     mavenCentral()
 }
-
+println "LOG.DEBUG before bintray upload"
 if (project.rootProject.file('local.properties').exists()) {
+    println "LOG.DEBUG inside bintray upload"
     apply from: '../install.gradle'
     apply from: '../bintray.gradle'
 }
