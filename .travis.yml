@@ -6,4 +6,5 @@ android:
 
 script:
     - printf "user=$user\napikey=$apikey" > local.properties
-    - ./gradlew # mytask
+    - ./gradlew install
+    - ./gradlew bintrayUpload
