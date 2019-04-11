@@ -19,7 +19,7 @@ ext {
     siteUrl = 'https://github.com/AppVelox/permissionist'
     gitUrl = 'https://github.com/AppVelox/permissionist.git'
 
-    libraryVersion = '0.0.2'
+    libraryVersion = '0.0.3'
 
     developerId = 'MishkaBolgov'
     developerName = 'Mikhail Bolgov'
