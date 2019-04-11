@@ -1,6 +1,6 @@
-[ ![Download](https://api.bintray.com/packages/appvelox/Permissionist/ru.appvelox.permissionist/images/download.svg?version=0.0.1) ](https://bintray.com/appvelox/Permissionist/ru.appvelox.permissionist/0.0.3/link)
 
 # Permissionist
+[ ![Download](https://api.bintray.com/packages/appvelox/Permissionist/ru.appvelox.permissionist/images/download.svg?version=0.0.3) ](https://bintray.com/appvelox/Permissionist/ru.appvelox.permissionist/0.0.3/link)
 
 Handy Android library for permission requesting
 
@@ -8,7 +8,7 @@ Handy Android library for permission requesting
 Add dependency in your module `build.gradle`
 ```groovy
 dependencies{
-    implementation 'ru.appvelox.permissionist:permissionist:0.0.1'
+    implementation 'ru.appvelox.permissionist:permissionist:0.0.3'
 }
 ```
 
