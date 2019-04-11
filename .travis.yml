@@ -1,4 +1,9 @@
 language: android
+
+branches:
+  only:
+  - master
+
 android:
   components:
     - build-tools-28.0.3
@@ -6,5 +11,3 @@ android:
 
 script:
     - printf "user=$user\napikey=$apikey" > local.properties
-    - ./gradlew install
-    - ./gradlew bintrayUpload
