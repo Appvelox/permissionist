@@ -3,9 +3,9 @@ package ru.appvelox.permissionist
 import android.content.Context
 import android.content.Intent
 import android.content.pm.PackageManager
-import android.support.v4.content.ContextCompat
-import android.support.v7.app.AlertDialog
-import android.support.v7.app.AppCompatActivity
+import androidx.core.content.ContextCompat
+import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import java.io.Serializable
 
 object Permissionist {
@@ -112,7 +112,7 @@ object Permissionist {
                 return this
             }
 
-            Permissionist.permissions[permission] = listener
+            permissions[permission] = listener
             return this
         }
 
@@ -147,7 +147,7 @@ object Permissionist {
             createPermissionistActivity()
         }
 
-        private fun showSystemRationale(rationale: Permissionist.Rationale) {
+        private fun showSystemRationale(rationale: Rationale) {
             val builder = AlertDialog.Builder(activity)
 
             rationale.title?.let {
@@ -181,7 +181,7 @@ object Permissionist {
         }
 
         private fun createPermissionistActivity() {
-            val permissions = Permissionist.permissions.keys.toTypedArray()
+            val permissions = permissions.keys.toTypedArray()
 
             if (permissions.isEmpty()) {
                 notifyCommonListener(mapOf())

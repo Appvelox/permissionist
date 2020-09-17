@@ -1,10 +1,9 @@
 package ru.appvelox.permissionist
 
 import android.Manifest
-import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatActivity
 import com.google.gson.Gson
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -58,13 +57,15 @@ class MainActivity : AppCompatActivity() {
 
         buttonRequestPermissionWithSystemRationale.setOnClickListener {
             Permissionist.forActivity(this)
-                    .addPermission(Manifest.permission.CAMERA, object: Permissionist.SingleListener{
+                    .addPermission(Manifest.permission.CAMERA, object : Permissionist.SingleListener {
                         override fun onPermissionGranted(permission: String) {
 //                            Do something if permission granted
+                            Log.d("tag", "onPermissionGranted: ${Gson().toJson(permission)}")
                         }
 
                         override fun onPermissionDenied(permission: String) {
 //                            Do something if permission denied
+                            Log.d("tag", "onPermissionDenied: ${Gson().toJson(permission)}")
                         }
                     })
                     .withRationale(editTextSystemRationaleTitle.text.toString(), editTextSystemRationaleMessage.text.toString(), "Ok", "Cancel")
@@ -76,10 +77,6 @@ class MainActivity : AppCompatActivity() {
                     .addPermission(Manifest.permission.CAMERA)
                     .withRationale(CustomRationaleDialog())
                     .request()
-
-
         }
-
-
     }
 }

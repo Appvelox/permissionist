@@ -1,15 +1,15 @@
 package ru.appvelox.permissionist
 
 import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat
+import androidx.core.app.ActivityCompat
 
 class PermissionistActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_permissionist)
-        val permissions = intent.getStringArrayExtra(EXTRA_PERMISSION_NAME)
+        val permissions = intent.getStringArrayExtra(EXTRA_PERMISSION_NAME)!!
         ActivityCompat.requestPermissions(this, permissions, REQUEST_PERMISSION_CODE)
     }
 
@@ -33,9 +33,9 @@ class PermissionistActivity : AppCompatActivity() {
     }
 
     companion object {
-        val EXTRA_PERMISSION_NAME = "permission name"
-        val EXTRA_RATIONALE = "rationale"
+        const val EXTRA_PERMISSION_NAME = "permission name"
+        const val EXTRA_RATIONALE = "rationale"
 
-        val REQUEST_PERMISSION_CODE = 0
+        const val REQUEST_PERMISSION_CODE = 0
     }
 }

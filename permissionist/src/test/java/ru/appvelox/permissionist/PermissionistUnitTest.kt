@@ -2,12 +2,10 @@ package ru.appvelox.permissionist
 
 import android.Manifest
 import android.content.pm.PackageManager
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import io.mockk.*
 import org.junit.Before
 import org.junit.Test
-import org.mockito.Mockito.mock
-
 
 class PermissionistUnitTest {
 
@@ -34,7 +32,6 @@ class PermissionistUnitTest {
 
     @Test
     fun forActivity_PermissionistObjectReseted() {
-        val activity = mock(AppCompatActivity::class.java)
         permissionist.forActivity(activity)
         verify { permissionist["reset"]() }
     }
